@@ -4,7 +4,12 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "ts_ls" }
+local servers = { 
+  "html",
+  "cssls",
+  "ts_ls",
+  "volar"
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -23,17 +28,15 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 
+-- vue language server
 local mason_registry = require('mason-registry')
 local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
-
-lspconfig.ts_ls.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
+local lspconfig = require('lspconfig')
+require'lspconfig'.ts_ls.setup{
   init_options = {
     plugins = {
       {
-        name = "@vue/typescript-plugin",
+        name = '@vue/typescript-plugin',
         location = vue_language_server_path,
         languages = {"javascript", "typescript", "vue"},
       },
@@ -45,3 +48,7 @@ lspconfig.ts_ls.setup {
     "vue",
   },
 }
+
+-- You must make sure volar is setup
+-- e.g. require'lspconfig'.volar.setup{}
+-- See volar's section for more information
