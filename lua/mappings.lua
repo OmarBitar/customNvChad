@@ -19,3 +19,13 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split 
 map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+
+-- formatting
+local conform = require("conform")
+map({ "n", "v" }, "<leader>=", function()
+    conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+    })
+end, { desc = "Format file or range (in visual mode)" })
