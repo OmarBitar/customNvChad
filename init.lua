@@ -1,5 +1,12 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.scrolloff = 999
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -31,8 +38,6 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "nvchad.autocmds"
-
-
 
 vim.schedule(function()
   require "mappings"
