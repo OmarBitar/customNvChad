@@ -20,6 +20,10 @@ map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- spli
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
+-- workspace
+map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
+map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
+
 -- formatting
 local conform = require("conform")
 map({ "n", "v" }, "<leader>=", function()
