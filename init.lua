@@ -7,6 +7,8 @@ vim.opt.scrolloff = 999
 vim.opt.ignorecase = true -- ignore case when searching
 vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+vim.opt.spell = true        -- Enable spell checking
+vim.opt.spelllang = 'en_us' -- Set the default language to US English
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
