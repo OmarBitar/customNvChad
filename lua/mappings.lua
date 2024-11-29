@@ -7,6 +7,19 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- lsp
+map("n", "gR", "<cmd>Telescope lsp_references<CR>", { desc = "Show LSP references" }) -- show definition, references
+map("n", "gD", vim.lsp.buf.declaration, { desc = "past" } ) -- go to declaration
+map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "past" }) -- show lsp definitions
+map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "past" }) -- show lsp implementations
+map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "past" }) -- show lsp type definitions
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "past" }) -- see available code actions, in visual mode will apply to selection
+
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "past" }) -- smart rename
+
+map("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+
 -- telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
