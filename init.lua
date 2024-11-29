@@ -9,6 +9,10 @@ vim.opt.smartcase = true -- if you include mixed case in your search, assumes yo
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 vim.opt.spell = true        -- Enable spell checking
 vim.opt.spelllang = 'en_us' -- Set the default language to US English
+vim.opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+-- tabs & indentation
+vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
