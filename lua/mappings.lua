@@ -17,7 +17,8 @@ map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "past" }) -- s
 
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "past" }) -- smart rename
 
-map("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+map("n", "<leader>rs", ":LspRestart<CR>", { desc = 'Restart LSP'}) -- mapping to restart lsp if necessary
+map("n", "<leader>q", ":qa!<CR>", { desc = 'Quit Neovim'}) -- mapping to restart lsp if necessary
 
 
 -- telescope
