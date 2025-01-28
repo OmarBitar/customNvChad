@@ -13,10 +13,9 @@ map("n", "gD", vim.lsp.buf.declaration, { desc = "past" } ) -- go to declaration
 map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "past" }) -- show lsp definitions
 map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "past" }) -- show lsp implementations
 map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "past" }) -- show lsp type definitions
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "past" }) -- see available code actions, in visual mode will apply to selection
--- gen.nvim command
-map("n", "<Space>ai", function() vim.cmd("Gen") end, { desc = "Run gen.nvim with 'i' action" })
 
+-- gen.nvim command for multi-selection
+map( { 'v', 'n' }, "<Space>ai", function() vim.cmd("Gen") end, { desc = "Run gen.nvim with 'i' action on the selected text" })
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "past" }) -- smart rename
 
 map("n", "<leader>rs", ":LspRestart<CR>", { desc = 'Restart LSP'}) -- mapping to restart lsp if necessary
