@@ -14,6 +14,8 @@ map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "past" }) -- show 
 map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "past" }) -- show lsp implementations
 map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "past" }) -- show lsp type definitions
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "past" }) -- see available code actions, in visual mode will apply to selection
+-- gen.nvim command
+map("n", "<Space>ai", function() vim.cmd("Gen") end, { desc = "Run gen.nvim with 'i' action" })
 
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "past" }) -- smart rename
 
